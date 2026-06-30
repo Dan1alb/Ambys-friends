@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambys & friends</title>
+    <!-- Para las letras bonitas -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Librerias del scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <section class="container">
+        <h1 class="titulo">¡Conoce a Ambys y sus amigos!</h1>
+        
+        <div class="contenedor-monos">
+            
+            <!-- las tarjetas de cada uno !!ME FALTAN LAS IMAGENES ME DIO HUEVA!! -->
+            <div class="presentacion" id="ambys">
+                <img src="images/ambys.png" alt="Ambys">
+                <h3>Ambys</h3>
+                <p>Es muy simpática, alegre y le encanta enseñar a otros. ¡Más valiente de lo que cree! </p>
+            </div>
+
+            <div class="presentacion" id="sal">
+                <img src="images/sal.png" alt="Sal">
+                <h3>Sal</h3>
+                <p>Es un poco testarudo y temperamental, pero es muy leal a sus amigos.</p>
+            </div>
+
+            <div class="presentacion" id="amandra">
+                <img src="images/amandra.png" alt="Amandra">
+                <h3>Amandra</h3>
+                <p>Es muy dulce y empática. Su naturaleza tranquila te llenará de confort.</p>
+            </div>
+            <!-- fin de las tarjetas -->
+        </div>
+    </section>
+    <section class="quienes-somos">
+        <div class="contenido">
+            <h2>¿Quiénes somos?</h2>
+            <p></p>
+
+        </div>
+        
+    </section>
+
+
+    <script>
+        // mete el plugin ScrollTrigger para la animacion tipo apple
+        gsap.registerPlugin(ScrollTrigger);
+
+        // timeline del scroll 
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".container",
+                start: "top top",      
+                end: "+=2500",         
+                scrub: 1,              
+                pin: true,             
+                anticipatePin: 1
+            }
+        });
+
+        // El movimiento de la aniumacion apple !!SE HACE UN ASI Q AGUAS!!
+        tl.to("#ambys", {
+            scale: 1,
+            opacity: 1,
+            x: -300, 
+            duration: 1
+        })
+        .to("#sal", {
+            scale: 1,
+            opacity: 1,
+            x: 0,
+            duration: 1
+        }, "-=0.4") 
+        .to("#amandra", {
+            scale: 1,
+            opacity: 1,
+            x: 300, 
+            duration: 1
+        }, "-=0.4")
+        .to(".contenedor-monos", {
+            scale: 2.5,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5
+        });
+    </script>
+</body>
+</html>
