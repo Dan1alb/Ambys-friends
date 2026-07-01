@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambys & friends</title>
     <!-- Para las letras bonitas -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Librerias del scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body>
+
+<body class="no-scroll">
+
+    <!-- intento uno de la animacion de bienvenida -->
+    <div id="intro">
+        <img src="images/logo.png" alt="Logo Oncoamigos" class="logo">
+        <!--img src="images/bienvenida.gif" alt="Bienvenida" class="gif"-->
+
+    </div>
 
     <section class="container">
         <h1 class="titulo">¡Conoce a Ambys y sus amigos!</h1>
-        
+
         <div class="contenedor-monos">
-            
+
             <!-- las tarjetas de cada uno !!ME FALTAN LAS IMAGENES ME DIO HUEVA!! -->
             <div class="presentacion" id="ambys">
                 <img src="images/ambys.png" alt="Ambys">
@@ -44,62 +55,21 @@
     <section class="quienes-somos">
         <div class="contenido">
             <h2>¿Quiénes somos?</h2>
-            <p> <strong>Oncoamigos</strong> es un proyecto que nace del deseo de transformar la medicina 
-                en una disciplina más humana, accesible e inclusiva. Los diagnósticos de enfermedades 
-                crónicas suelen crear incertidumbre. Creemos que todos los pacientes y sus familias deben 
-                tener acceso a información basada en evidencia sobre su condición y los tratamientos 
-                disponibles, con el objetivo de mejorar el apego terapéutico y disminuir la ansiedad 
+            <p> <strong>Oncoamigos</strong> es un proyecto que nace del deseo de transformar la medicina
+                en una disciplina más humana, accesible e inclusiva. Los diagnósticos de enfermedades
+                crónicas suelen crear incertidumbre. Creemos que todos los pacientes y sus familias deben
+                tener acceso a información basada en evidencia sobre su condición y los tratamientos
+                disponibles, con el objetivo de mejorar el apego terapéutico y disminuir la ansiedad
                 asociada al proceso de atención médica.</p>
             <p>Nuestro proyecto busca ayudar principalmente a pacientes pediátricos y sus cuidadores p
-                rincipales por medio de la educación, facilitando el proceso de aceptación y adaptación; 
+                rincipales por medio de la educación, facilitando el proceso de aceptación y adaptación;
                 utilizando herramientas lúdicas como acompañamiento en esta nueva etapa.</p>
 
         </div>
-        
+
     </section>
 
-
-    <script>
-        // mete el plugin ScrollTrigger para la animacion tipo apple
-        gsap.registerPlugin(ScrollTrigger);
-
-        // timeline del scroll 
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".container",
-                start: "top top",      
-                end: "+=2500",         
-                scrub: 1,              
-                pin: true,             
-                anticipatePin: 1
-            }
-        });
-
-        // El movimiento de la aniumacion apple !!SE HACE UN ASI Q AGUAS!!
-        tl.to("#ambys", {
-            scale: 1,
-            opacity: 1,
-            x: -300, 
-            duration: 1
-        })
-        .to("#sal", {
-            scale: 1,
-            opacity: 1,
-            x: 0,
-            duration: 1
-        }, "-=0.4") 
-        .to("#amandra", {
-            scale: 1,
-            opacity: 1,
-            x: 300, 
-            duration: 1
-        }, "-=0.4")
-        .to(".contenedor-monos", {
-            scale: 2.5,
-            opacity: 0,
-            duration: 1,
-            delay: 0.5
-        });
-    </script>
+    <script src="js/bienvenida.js"></script>
 </body>
+
 </html>
