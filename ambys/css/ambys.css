@@ -1,6 +1,3 @@
-  /* =========================================
-           VARIABLES DE COLOR (De tus imágenes)
-        ========================================= */
         :root {
             --c-principal: #FFD1E0;
             --c-secundario: #EC8AAA;
@@ -10,12 +7,8 @@
             --c-interior: #A94C6A;
         }
 
-        /* =========================================
-           ESTILOS GENERALES
-        ========================================= */
         body {
-            /* Reemplaza con tu imagen de fondo */
-            background-image: url('images/ambysbackground.png'); 
+            background-image: url('../images/ambysbackground.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -23,19 +16,18 @@
             color: var(--c-iris);
         }
 
-        /* Contenedor transparente para resaltar las cards */
         .wiki-container {
-            background-color: rgba(255, 230, 238, 0.6); /* Color cicatriz con transparencia */
+            background-color: rgba(255, 230, 238, 0.6); 
             min-height: 100vh;
             padding-top: 3rem;
             padding-bottom: 3rem;
         }
 
         /* =========================================
-           ESTILOS DE LAS CARDS (ESTILO WIKI)
+           ESTILOS DE LAS CARDS
         ========================================= */
         .wiki-card {
-            background-color: var(--c-esclera); /* Fondo claro de la esclera para buena lectura */
+            background-color: var(--c-esclera); 
             border: 3px solid var(--c-secundario);
             border-radius: 12px;
             box-shadow: 0px 8px 25px rgba(169, 76, 106, 0.3); /* Sombra color "interior" */
