@@ -15,7 +15,7 @@
         ========================================= */
         body {
             /* Reemplaza con tu imagen de fondo */
-            background-image: url('tu-imagen-de-fondo.jpg'); 
+            background-image: url('images/ambysbackground.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
