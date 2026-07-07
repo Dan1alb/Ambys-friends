@@ -1,0 +1,117 @@
+  /* =========================================
+           VARIABLES DE COLOR (De tus imágenes)
+        ========================================= */
+        :root {
+            --c-principal: #FFD1E0;
+            --c-secundario: #EC8AAA;
+            --c-cicatriz: #FFE6EE;
+            --c-esclera: #FCF8F3;
+            --c-iris: #010101;
+            --c-interior: #A94C6A;
+        }
+
+        /* =========================================
+           ESTILOS GENERALES
+        ========================================= */
+        body {
+            /* Reemplaza con tu imagen de fondo */
+            background-image: url('tu-imagen-de-fondo.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--c-iris);
+        }
+
+        /* Contenedor transparente para resaltar las cards */
+        .wiki-container {
+            background-color: rgba(255, 230, 238, 0.6); /* Color cicatriz con transparencia */
+            min-height: 100vh;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        /* =========================================
+           ESTILOS DE LAS CARDS (ESTILO WIKI)
+        ========================================= */
+        .wiki-card {
+            background-color: var(--c-esclera); /* Fondo claro de la esclera para buena lectura */
+            border: 3px solid var(--c-secundario);
+            border-radius: 12px;
+            box-shadow: 0px 8px 25px rgba(169, 76, 106, 0.3); /* Sombra color "interior" */
+            overflow: hidden;
+        }
+
+        .wiki-header {
+            background-color: var(--c-principal);
+            color: var(--c-interior);
+            font-family: 'Fredoka', sans-serif;
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 3px solid var(--c-secundario);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           TARJETA IZQUIERDA: PERSONAJE
+        ========================================= */
+        .char-image-box {
+            background-color: var(--c-cicatriz);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--c-principal);
+        }
+
+        .char-image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px dashed var(--c-secundario);
+        }
+
+        /* Tabla lateral de características (típica de fandom) */
+        .wiki-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .wiki-table th {
+            background-color: var(--c-principal);
+            color: var(--c-interior);
+            font-family: 'Fredoka', sans-serif;
+            padding: 0.8rem;
+            border: 1px solid var(--c-secundario);
+            width: 40%;
+        }
+
+        .wiki-table td {
+            background-color: var(--c-esclera);
+            padding: 0.8rem;
+            border: 1px solid var(--c-secundario);
+        }
+
+        /* =========================================
+           TARJETA DERECHA: INFORMACIÓN
+        ========================================= */
+        .wiki-content {
+            padding: 2rem;
+        }
+
+        .wiki-content h2 {
+            color: var(--c-interior);
+            font-family: 'Fredoka', sans-serif;
+            border-bottom: 2px solid var(--c-principal);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .wiki-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .wiki-content p, .wiki-content li {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
