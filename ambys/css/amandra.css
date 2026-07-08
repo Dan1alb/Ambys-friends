@@ -1,14 +1,14 @@
         :root {
-            --c-principal: #FFD1E0;
-            --c-secundario: #EC8AAA;
-            --c-cicatriz: #ffedf0;
+            --c-principal: #A1689A;
+            --c-secundario: #6B2763;
+            --c-cicatriz: #efd3f0;
             --c-esclera: #FCF8F3;
             --c-iris: #010101;
-            --c-interior: #A94C6A;
+            --c-interior: #260A23;
         }
 
         body {
-            background-image: url('../images/ambysbackground.png'); 
+            background-image: url('../images/amandrabackground.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;

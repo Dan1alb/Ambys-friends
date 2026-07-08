@@ -1,14 +1,14 @@
         :root {
-            --c-principal: #FFD1E0;
-            --c-secundario: #EC8AAA;
-            --c-cicatriz: #ffedf0;
+            --c-principal: #f9ca98;
+            --c-secundario: #E28850;
+            --c-cicatriz: #feeddc;
             --c-esclera: #FCF8F3;
             --c-iris: #010101;
-            --c-interior: #A94C6A;
+            --c-interior: #A75320;
         }
 
         body {
-            background-image: url('../images/ambysbackground.png'); 
+            background-image: url('../images/salbackground.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;

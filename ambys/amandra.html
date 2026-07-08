@@ -3,9 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Character sheet - Amandra</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Fuentes de tu proyecto -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/amandra.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-    
+
+    <div class="wiki-container">
+        <div class="container">
+            <!-- Fila principal de Bootstrap -->
+            <div class="row g-4 justify-content-center">
+                
+                <!-- COLUMNA IZQUIERDA: Tarjeta del Personaje -->
+                <div class="col-12 col-lg-3">
+                    <div class="card wiki-card">
+                        <h3 class="wiki-header">Amandra</h3>
+                        
+                        <div class="char-image-box">
+                          <img src="images/amandra.png" alt="Amandra">
+                        </div>
+
+                        <table class="wiki-table">
+                            <tbody>
+                                <tr>
+                                    <th>Especie</th>
+                                    <td>Ajolote</td>
+                                </tr>
+                                <tr>
+                                    <th>Rol</th>
+                                    <td>Personaje secundario</td>
+                                </tr>
+                                <tr>
+                                    <th>Personalidad</th>
+                                    <td>Timida y no se :c</td>
+                                </tr>
+                                <tr>
+                                    <th>Color Favorito</th>
+                                    <td>morado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- colm derecha de info-->
+                <div class="col-12 col-lg-7">
+                    <div class="card wiki-card h-100">
+                        <h2 class="wiki-header fs-3">Base de Datos del Personaje</h2>
+                        
+                        <div class="wiki-content">
+                            <h2>Biografía</h2>
+                            <p>amandra lore</p>
+                            
+                            <h2>Apariencia Física</h2>
+                            <p>morada todo morado</p>
+                            
+                            <h2>Curiosidades</h2>
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrapcito -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
