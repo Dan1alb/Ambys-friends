@@ -4,8 +4,8 @@ gsap.registerPlugin(ScrollTrigger);
 // --- ANIMACIÓN DE INTRODUCCIÓN ---
 gsap.to("#intro", {
     opacity: 0,
-    duration: 1, // Cuánto tarda en desvanecerse (1 segundo)
-    delay: 3,    // Cuánto tiempo se muestra antes de desvanecerse (Ej: 3 segundos. ¡Ajustalo a lo que dure tu GIF!)
+    duration: 0.4, // Cuánto tarda en desvanecerse (1 segundo)
+    delay: 5,    // Cuánto tiempo se muestra antes de desvanecerse (Ej: 3 segundos. ¡Ajustalo a lo que dure tu GIF!)
     onComplete: () => {
         // Cuando termina la animación, ocultamos el div por completo
         document.getElementById("intro").style.display = "none";
