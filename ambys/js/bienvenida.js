@@ -1,25 +1,53 @@
 // mete el plugin ScrollTrigger para la animacion tipo apple
 gsap.registerPlugin(ScrollTrigger);
 
-// --- ANIMACIÓN DE INTRODUCCIÓN ---
-gsap.to("#intro", {
-    opacity: 0,
-    duration: 0.4, // Cuánto tarda en desvanecerse (1 segundo)
-    delay: 5,    // Cuánto tiempo se muestra antes de desvanecerse (Ej: 3 segundos. ¡Ajustalo a lo que dure tu GIF!)
-    onComplete: () => {
-        // Cuando termina la animación, ocultamos el div por completo
-        document.getElementById("intro").style.display = "none";
+    if (sessionStorage.getItem("introVista") === "true") {
+    
+//skipea la animacion si ya se vió
+    document.getElementById("intro").style.display = "none";
+    document.body.classList.remove("no-scroll");
+    ScrollTrigger.refresh();
 
-        // Le regresamos el scroll a la página
-        document.body.classList.remove("no-scroll");
+} else {
+    // Linea de tiempo de la animacion
+    const tlIntro = gsap.timeline({
+        onComplete: () => {
+            document.getElementById("intro").style.display = "none";
+            document.body.classList.remove("no-scroll");
+            ScrollTrigger.refresh();
+            
+            //lo que nos dice que ya se reprodujo la animacion
+            sessionStorage.setItem("introVista", "true");
+        }
+    });
 
-        // Refrescamos ScrollTrigger por si las dimensiones cambiaron
-        ScrollTrigger.refresh();
-    }
-});
+    tlIntro.to({}, { duration: 4 }) //duracion video
+
+    .to("#intro-media", { 
+        opacity: 0, 
+        duration: 0.4,
+        onComplete: () => {
+            //Cambio al logo
+            document.getElementById("intro-media").style.display = "none";
+            document.getElementById("intro-logo").style.display = "block";
+        }
+    })
+
+    .to("#intro-logo", { 
+        opacity: 1, 
+        duration: 0.5 
+    })
+
+    .to({}, { duration: 1 })//duracion logo
+
+    .to("#intro", { 
+        opacity: 0, 
+        duration: 0.6 
+    });
+}
 
 // timeline del scroll 
-let tl = gsap.timeline({
+let tlScroll = gsap.timeline({
     scrollTrigger: {
         trigger: ".container",
         start: "top top",
@@ -31,7 +59,7 @@ let tl = gsap.timeline({
 });
 
 // El movimiento de la aniumacion apple !!SE HACE UN CAGADERO ASI Q AGUAS!!
-tl.to("#ambys", {
+tlScroll.to("#ambys", {
     scale: 1,
     opacity: 1,
     x: -300,
@@ -55,3 +83,5 @@ tl.to("#ambys", {
         duration: 1,
         delay: 0.5
     });
+
+    

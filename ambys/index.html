@@ -23,15 +23,16 @@
     <!-- intento uno de la animacion de bienvenida -->
     <div id="intro">
         
-        <video autoplay muted loop playsinline>
-    <source src="images/Sapopan.mp4" type="video/mp4">
-    Tu navegador no soporta el video. </video>
-        <!--img src="images/bienvenida.gif" alt="Bienvenida" class="gif"-->
+        <video id="intro-media" autoplay muted playsinline>
+        <source src="images/Sapopan.mp4" type="video/mp4">
+        Tu navegador no soporta el video. </video>
+        <!--Logo despues del video-->
+        <img id="intro-logo" src="images/Logo.png" alt="Logo" class="logo" style="display: none; opacity: 0;">
 
     </div>
 
     <nav class="navbar">
-        <a href="#" class="nav-logo">
+        <a href="index.html" class="nav-logo">
                <img src="images/Logomenu.png" class="logo-menu">
         </a>
            
@@ -41,7 +42,7 @@
             <li><a href="#media">Media</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </nav>
+    </nav> 
 
     <section class="container" id="personajes">
         <h1 class="titulo">¡Conoce a Ambys y sus amigos!</h1>
