@@ -1,8 +1,9 @@
 @font-face {
     font-family: 'AmbysFont';
-    src: url(/ambys/fonts/Ambys.woff) format('woff');
+    src: url(../fonts/Ambys.woff) format('woff');
     font-weight: normal;
     font-style: normal;
+    
 }
 * {
     margin: 0;
@@ -18,8 +19,8 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'AmbysFont', sans-serif; /* letra de ambys */
     font-family: 'Fredoka', sans-serif;
+    font-family: 'AmbysFont', sans-serif; /* letra de ambys */  
 }
 
 .container {
@@ -168,7 +169,7 @@ h1, h2, h3 {
 }
 
 .contenido h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #D65A8A;
     margin-bottom: 1.5rem;
 }
