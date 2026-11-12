@@ -326,7 +326,7 @@ body.no-scroll {
    ========================================================================== */
 .seccion-personajes {
     min-height: 100vh;
-    background-color: var(--color-rosa-fondo);
+    background: url('../images/bacckground.png') center center / cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -459,7 +459,7 @@ body.no-scroll {
    10. SECCIÓN 6: RESPALDO MÉDICO
    ========================================================================== */
 .seccion-respaldo {
-    background: linear-gradient(135deg, var(--color-morado) 0%, var(--color-morado-oscuro) 100%);
+    background: linear-gradient(135deg, #B48EC9 0%, #af7ec9 100%);
     padding: 6rem 2rem;
 }
 
@@ -467,7 +467,7 @@ body.no-scroll {
     background-color: var(--color-blanco);
     padding: 2.2rem;
     border-radius: 20px;
-    border: 2px solid var(--color-menta-fondo);
+    border: 2px solid var(--color-menta-fondo); 
 }
 
 .tarjeta-respaldo h3 {
