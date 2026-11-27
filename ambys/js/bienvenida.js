@@ -5,12 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("intro-media");
     const logo = document.getElementById("intro-logo");
 
+    const pista = document.querySelector('.carrusel-pista');
+    const btnSiguiente = document.getElementById('btn-siguiente');
+    const btnAnterior = document.getElementById('btn-anterior');
+    let indice = 0;
+
+    btnSiguiente.addEventListener('click', () => {
+        indice = (indice < 2) ? indice + 1 : 0; // 2 es el índice máximo (3 imágenes)
+        pista.style.transform = `translateX(-${indice * 100}%)`;
+    });
+
+    btnAnterior.addEventListener('click', () => {
+        indice = (indice > 0) ? indice - 1 : 2;
+        pista.style.transform = `translateX(-${indice * 100}%)`;
+    });
+
     // Función unificada para levantar el telón de intro y reactivar el scroll
     const finalizarIntro = () => {
         if (!intro) return;
         intro.style.display = "none";
         document.body.classList.remove("no-scroll");
-        
+
         // Recalcular posiciones del DOM una vez liberado el espacio
         ScrollTrigger.refresh();
     };
@@ -70,16 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Entrada coordinada: Sal al centro, luego Ambys y Amandra
         tlCards
-            .fromTo("#card-sal", 
+            .fromTo("#card-sal",
                 { opacity: 0, scale: 0.75, y: 40 },
                 { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power2.out" }
             )
-            .fromTo("#card-ambys", 
+            .fromTo("#card-ambys",
                 { opacity: 0, scale: 0.75, y: 40 },
                 { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power2.out" },
                 "-=0.6"
             )
-            .fromTo("#card-amandra", 
+            .fromTo("#card-amandra",
                 { opacity: 0, scale: 0.75, y: 40 },
                 { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power2.out" },
                 "-=0.6"

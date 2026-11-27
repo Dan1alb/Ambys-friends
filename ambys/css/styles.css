@@ -196,45 +196,139 @@ body.no-scroll {
     text-align: left;
 }
 
-/* ==========================================================================
-   5. SECCIÓN 1: HERO
-   ========================================================================== */
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
 .seccion-hero {
+    position: relative; /* Clave para que los elementos absolutos se queden dentro */
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--color-rosa-fondo) 0%, var(--color-rosa-acento) 100%);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: flex-end;   /* Pega el contenido abajo */
+    align-items: flex-start;     /* Pega el contenido a la izquierda */
     padding: 6rem 2rem 3rem;
+    overflow: hidden; /* Evita que el carrusel sobresalga */
 }
 
+/* =========================================
+   CARRUSEL DE FONDO (FULLSCREEN)
+   ========================================= */
+.hero-carrusel-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Se queda al fondo */
+}
+
+.carrusel-pista {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-pista img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene la pantalla sin deformarse */
+    object-position: center; 
+}
+
+/* Capa de contraste: Oscurece la parte de abajo para que las letras blancas destaquen */
+.carrusel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    z-index: 2; /* Por encima de las imágenes, por debajo del texto */
+}
+
+/* =========================================
+   CONTENIDO Y TEXTO (FRENTE)
+   ========================================= */
 .hero-contenido {
+    position: relative;
+    z-index: 10; /* Se asegura de estar por encima del fondo y el overlay */
     max-width: 850px;
-    text-align: center;
+    text-align: left; /* Como está en la izquierda, alineamos el texto a la izquierda */
 }
 
 .hero-titulo {
     font-family: var(--fuente-titulos);
     font-size: 3.5rem;
-    color: var(--color-rosa-primario);
+    color: var(--color-blanco, #ffffff); /* Cambié a blanco para que resalte sobre las fotos */
     margin-bottom: 1.2rem;
     line-height: 1.15;
-    text-shadow: 2px 2px 0 var(--color-blanco);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para máxima legibilidad */
 }
 
 .hero-subtitulo {
     font-size: 1.3rem;
-    color: #4A5568;
+    color: #f1f5f9; /* Color más claro (gris/blanco) para leerse sobre el fondo oscuro */
     margin-bottom: 2.2rem;
     line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .hero-acciones {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
     gap: 1.5rem;
     flex-wrap: wrap;
+}
+
+/* =========================================
+   CONTROLES DEL CARRUSEL (BOTONES/PUNTOS)
+   ========================================= */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3); /* Semitransparente para no estorbar la foto */
+    color: #fff;
+    border: 2px solid transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; /* Por encima de las fotos */
+    transition: all 0.3s ease;
+}
+
+.btn-carrusel:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-rosa-primario, #ff4d94);
+}
+
+#btn-anterior { left: 20px; }
+#btn-siguiente { right: 20px; }
+
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 30px;
+    right: 30px; /* Moví los puntos a la derecha ya que tu texto está a la izquierda */
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.punto.activo {
+    background: #ffffff;
+    width: 30px;
+    border-radius: 10px;
 }
 
 /* ==========================================================================

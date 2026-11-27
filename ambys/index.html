@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
@@ -17,8 +20,13 @@
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para los íconos de flechas (opcional, pero se ve mejor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script src="js/bienvenida.js" defer></script>
 </head>
+
 <body class="no-scroll">
 
     <!-- Capa de bienvenida -->
@@ -50,24 +58,47 @@
 
     <main>
         <!-- SECCIÓN 1: HERO -->
-        <section class="seccion-hero" id="inicio">
-            <div class="hero-contenido">
-                <h1 class="hero-titulo">Acompañando a pequeños valientes en su tratamiento</h1>
-                <p class="hero-subtitulo">
-                    Transformando el miedo en valentía a través del juego, la educación y el acompañamiento emocional.
-                </p>
-                <div class="hero-acciones">
-                    <a href="#causa" class="btn btn-primario">Conoce la causa</a>
-                    <a href="#personajes" class="btn btn-secundario">Conoce a los personajes</a>
-                </div>
-            </div>
-        </section>
+       <section class="seccion-hero" id="inicio">
+    <!-- El carrusel ahora es el fondo -->
+    <div class="hero-carrusel-fondo">
+        <div class="carrusel-pista">
+            <!-- Tus imágenes -->
+            <img src="images/img1.png" alt="Tratamiento 1">
+            <img src="images/img2.png" alt="Tratamiento 2">
+            <img src="images/img3.png" alt="Tratamiento 3">
+        </div>
+        
+        <!-- Capa superpuesta para dar contraste al texto -->
+        <div class="carrusel-overlay"></div>
+
+        <!-- Controles de navegación (opcionales para el fondo, pero recomendados) -->
+        <button id="btn-anterior" class="btn-carrusel">&#10094;</button>
+        <button id="btn-siguiente" class="btn-carrusel">&#10095;</button>
+        <div class="carrusel-indicadores">
+            <span class="punto activo"></span>
+            <span class="punto"></span>
+            <span class="punto"></span>
+        </div>
+    </div>
+
+    <!-- Tu contenido superpuesto en la esquina inferior izquierda -->
+    <div class="hero-contenido">
+        <h1 class="hero-titulo">Acompañando a pequeños valientes en su tratamiento</h1>
+        <p class="hero-subtitulo">
+            Transformando el miedo en valentía a través del juego, la educación y el acompañamiento emocional.
+        </p>
+        <div class="hero-acciones">
+            <a href="#causa" class="btn btn-primario">Conoce la causa</a>
+            <a href="#personajes" class="btn btn-secundario">Conoce a los personajes</a>
+        </div>
+    </div>
+</section>
 
         <!-- SECCIÓN 2: CAUSA -->
         <section class="seccion-causa" id="causa">
             <div class="contenedor-ancho">
                 <h2 class="titulo-seccion">El cáncer infantil: una realidad que necesita atención</h2>
-                
+
                 <div class="grid-estadisticas">
                     <article class="tarjeta-stat">
                         <span class="stat-cifra">30%</span>
@@ -75,14 +106,17 @@
                     </article>
                     <article class="tarjeta-stat">
                         <span class="stat-cifra">53.2%</span>
-                        <p class="stat-descripcion">de los pacientes pediátricos presentan síntomas de ansiedad o depresión.</p>
+                        <p class="stat-descripcion">de los pacientes pediátricos presentan síntomas de ansiedad o
+                            depresión.</p>
                     </article>
                 </div>
 
                 <div class="bloque-destacado">
                     <p>
-                        Al ingresar al entorno hospitalario, los niños y sus familias enfrentan tecnicismos y procedimientos 
-                        invasivos en un momento de vulnerabilidad. La falta de recursos didácticos adaptados a su nivel cognitivo 
+                        Al ingresar al entorno hospitalario, los niños y sus familias enfrentan tecnicismos y
+                        procedimientos
+                        invasivos en un momento de vulnerabilidad. La falta de recursos didácticos adaptados a su nivel
+                        cognitivo
                         genera barreras de comunicación que intensifican el miedo.
                     </p>
                     <blockquote class="lema-causa">
@@ -96,7 +130,7 @@
         <section class="seccion-solucion" id="solucion">
             <div class="contenedor-ancho">
                 <h2 class="titulo-seccion texto-blanco">Nuestra misión: educación y empatía</h2>
-                
+
                 <div class="grid-tres-columnas">
                     <article class="tarjeta-solucion">
                         <div class="icono-solucion">
@@ -104,29 +138,34 @@
                         </div>
                         <h3>Peluche terapéutico interactivo</h3>
                         <p class="texto-tarjeta">
-                            Ajolotes con branquias removibles (que normalizan la caída de cabello), cicatriz de puerto para quimioterapia 
+                            Ajolotes con branquias removibles (que normalizan la caída de cabello), cicatriz de puerto
+                            para quimioterapia
                             y jeringa lúdica para simular procedimientos sin dolor.
                         </p>
                     </article>
 
                     <article class="tarjeta-solucion">
                         <div class="icono-solucion">
-                            <img src="images/doctor.png" alt="Icono Video" class="icono-video" style="width: 105px; height: 105px;">
+                            <img src="images/doctor.png" alt="Icono Video" class="icono-video"
+                                style="width: 105px; height: 105px;">
                         </div>
                         <h3>Videos educativos validados</h3>
                         <p class="texto-tarjeta">
-                            Cápsulas audiovisuales dirigidas a cuidadores con explicaciones clínicas en un lenguaje comprensible, 
+                            Cápsulas audiovisuales dirigidas a cuidadores con explicaciones clínicas en un lenguaje
+                            comprensible,
                             respaldadas por especialistas en hematología.
                         </p>
                     </article>
 
                     <article class="tarjeta-solucion">
                         <div class="icono-solucion">
-                            <img src="images/corazon.png" alt="Icono Acompañamiento" class="icono-acompanamiento" style="width: 105px; height: 105px;">
+                            <img src="images/corazon.png" alt="Icono Acompañamiento" class="icono-acompanamiento"
+                                style="width: 105px; height: 105px;">
                         </div>
                         <h3>Acompañamiento integral</h3>
                         <p class="texto-tarjeta">
-                            Herramientas multidisciplinarias diseñadas para reducir la ansiedad hospitalaria y fomentar el apego 
+                            Herramientas multidisciplinarias diseñadas para reducir la ansiedad hospitalaria y fomentar
+                            el apego
                             al tratamiento desde el primer día.
                         </p>
                     </article>
@@ -137,7 +176,7 @@
         <!-- SECCIÓN 4: PERSONAJES (GSAP SCROLLTRIGGER PIN) -->
         <section class="seccion-personajes" id="personajes">
             <h2 class="titulo-seccion">¡Conoce a Ambys y sus amigos!</h2>
-            
+
             <div class="contenedor-personajes">
                 <a href="sal.html" class="tarjeta-personaje" id="card-sal">
                     <img src="images/sal.png" alt="Personaje Sal" class="img-personaje">
@@ -168,11 +207,13 @@
         <section class="seccion-nosotros" id="nosotros">
             <div class="contenedor-ancho">
                 <h2 class="titulo-seccion">¿Quiénes somos?</h2>
-                
+
                 <div class="tarjeta-declaracion">
                     <p>
-                        En <strong>Ambys & Friends</strong> creemos que la medicina debe ser más humana, accesible e inclusiva. 
-                        Trabajamos para que cada paciente pediátrico y su familia cuenten con información confiable, disminuyendo 
+                        En <strong>Ambys & Friends</strong> creemos que la medicina debe ser más humana, accesible e
+                        inclusiva.
+                        Trabajamos para que cada paciente pediátrico y su familia cuenten con información confiable,
+                        disminuyendo
                         la incertidumbre mediante la empatía y el juego.
                     </p>
                 </div>
@@ -181,7 +222,8 @@
                     <article class="tarjeta-mv">
                         <h3>Misión</h3>
                         <p>
-                            Acompañar y educar a los pacientes pediátricos y sus cuidadores mediante recursos interactivos y juegos 
+                            Acompañar y educar a los pacientes pediátricos y sus cuidadores mediante recursos
+                            interactivos y juegos
                             de roles que reduzcan la ansiedad y promuevan el apego al tratamiento.
                         </p>
                     </article>
@@ -189,7 +231,8 @@
                     <article class="tarjeta-mv">
                         <h3>Visión</h3>
                         <p>
-                            Transformar el aprendizaje médico en una experiencia cercana y significativa para las familias en Latinoamérica, 
+                            Transformar el aprendizaje médico en una experiencia cercana y significativa para las
+                            familias en Latinoamérica,
                             convirtiendo el acompañamiento en un pilar esencial de la salud infantil.
                         </p>
                     </article>
@@ -201,12 +244,13 @@
         <section class="seccion-respaldo" id="respaldo">
             <div class="contenedor-ancho">
                 <h2 class="titulo-seccion texto-blanco">Validación médica e innovación</h2>
-                
+
                 <div class="grid-tres-columnas">
                     <article class="tarjeta-respaldo">
                         <h3>Desarrollo Tecnológico</h3>
                         <p>
-                            Colaboración con la <strong>Subdirección de Investigación</strong> y la <strong>Secretaría de Innovación (SIDET)</strong> 
+                            Colaboración con la <strong>Subdirección de Investigación</strong> y la <strong>Secretaría
+                                de Innovación (SIDET)</strong>
                             de la Facultad de Medicina de la UANL en el diseño de prototipos y plataformas digitales.
                         </p>
                     </article>
@@ -214,16 +258,20 @@
                     <article class="tarjeta-respaldo">
                         <h3>Respaldo Clínico</h3>
                         <p>
-                            Asesoría del <strong>Servicio de Hematología Pediátrica del Hospital Universitario</strong>, encabezado por la 
-                            <strong>Dra. med. Laura Villarreal Martínez</strong>, para guiones clínicos y pruebas de aceptación.
+                            Asesoría del <strong>Servicio de Hematología Pediátrica del Hospital Universitario</strong>,
+                            encabezado por la
+                            <strong>Dra. med. Laura Villarreal Martínez</strong>, para guiones clínicos y pruebas de
+                            aceptación.
                         </p>
                     </article>
 
                     <article class="tarjeta-respaldo">
                         <h3>Reconocimientos</h3>
                         <p>
-                            Participación en el 1er Foro de Innovación Tecnológica en Salud (33 Congreso Nacional), semifinalistas en 
-                            <strong>TigerTank 2026</strong> y seleccionados en <strong>InnovaFest Monterrey 2026</strong>.
+                            Participación en el 1er Foro de Innovación Tecnológica en Salud (33 Congreso Nacional),
+                            semifinalistas en
+                            <strong>TigerTank 2026</strong> y seleccionados en <strong>InnovaFest Monterrey
+                                2026</strong>.
                         </p>
                     </article>
                 </div>
@@ -234,11 +282,12 @@
         <section class="seccion-contacto" id="contacto">
             <h2 class="titulo-contacto">¡Ponte en contacto con nosotros!</h2>
             <p class="subtitulo-contacto">Haz clic en cualquiera de nuestros canales para comunicarte directamente.</p>
-            
+
             <div class="contenedor-contacto">
                 <article class="tarjeta-contacto">
                     <div class="icono-contacto" aria-hidden="true">
-                        <img src="images/letter.png" alt="Icono Correo Electrónico" class="icono-email" style="width: 50px; height: 50px;">
+                        <img src="images/letter.png" alt="Icono Correo Electrónico" class="icono-email"
+                            style="width: 50px; height: 50px;">
                     </div>
                     <h3>Correo Electrónico</h3>
                     <p>¿Tienes dudas o te interesa colaborar con la iniciativa? Escríbenos.</p>
@@ -247,15 +296,18 @@
 
                 <article class="tarjeta-contacto">
                     <div class="icono-contacto" aria-hidden="true">
-                        <img src="images/instagram.png" alt="Icono Instagram" class="icono-instagram" style="width: 50px; height: 50px;">
+                        <img src="images/instagram.png" alt="Icono Instagram" class="icono-instagram"
+                            style="width: 50px; height: 50px;">
                     </div>
                     <h3>Instagram</h3>
                     <p>Conoce nuestras dinámicas, infografías y avances del proyecto.</p>
-                    <a href="https://www.instagram.com/ambysandfriends/" target="_blank" rel="noopener noreferrer" class="btn-contacto btn-morado">Ir al perfil</a>
+                    <a href="https://www.instagram.com/ambysandfriends/" target="_blank" rel="noopener noreferrer"
+                        class="btn-contacto btn-morado">Ir al perfil</a>
                 </article>
             </div>
         </section>
     </main>
 
 </body>
+
 </html>
