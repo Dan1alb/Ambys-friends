@@ -203,8 +203,9 @@ body.no-scroll {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--color-rosa-fondo) 0%, var(--color-rosa-acento) 100%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
     padding: 6rem 2rem 3rem;
 }
 
